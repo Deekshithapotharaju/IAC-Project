@@ -6,10 +6,15 @@ This project demonstrates the implementation of Infrastructure as Code (IaC) usi
 The infrastructure is modular, reusable, and secure, with policy enforcement using OPA (Open Policy Agent). This ensures consistency, scalability, and compliance across deployments.
 
  Architecture
+
 User → Public IP → Virtual Machine → Virtual Network → Subnet → Storage / Database
+
 The user accesses the system via a Public IP
+
 Traffic is routed to a Virtual Machine (VM)
+
 The VM is deployed inside a Virtual Network (VNet) and Subnet
+
 Storage and Database services support application data
 
  Modules Description
@@ -35,22 +40,32 @@ Configures admin credentials and version
 Provides managed relational database service
 
 Technologies Used
-Terraform
-Microsoft Azure
-OPA (Open Policy Agent)
-Git & GitHub
+1. Terraform
+2. Microsoft Azure
+3. OPA (Open Policy Agent)
+4. Git & GitHub
 
  How to Run
 Step 1: Clone the repository
+
 git clone https://github.com/Deekshithapotharaju/IAC-Project
+
 cd IAC-Project
+
 Step 2: Login to Azure
+
 az login
+
 Step 3: Initialize Terraform
+
 terraform init
+
 Step 4: Preview Infrastructure
+
 terraform plan
+
 Step 5: Deploy Infrastructure
+
 terraform apply
 
  Policy Enforcement (OPA)
@@ -58,29 +73,33 @@ terraform apply
 Policy-as-Code is implemented using OPA to ensure security compliance.
 
  Policy Rule
+
 Storage accounts must enforce HTTPS-only traffic
 
  Policy Validation Steps
-terraform plan -out=tfplan
-terraform show -json tfplan > tfplan.json
-opa eval --input tfplan.json --data policy/policy.rego "data.terraform.policy.deny"
+
+1. terraform plan -out=tfplan
+2. terraform show -json tfplan > tfplan.json
+3. opa eval --input tfplan.json --data policy/policy.rego "data.terraform.policy.deny"
 
  Violation Scenario
+
 If HTTPS is disabled → Policy throws error
+
 Valid Scenario
+
 If HTTPS is enabled → No errors
 
  Outputs
-Virtual Machine Public IP
-Database Server Name
-Storage Account Name
+Virtual Machine Public IP, Database Server Name, Storage Account Name,NIC, VNet and subnets are created, Route table is added.
+
 
  Key Features
-Modular Terraform Architecture
-Remote State Configuration (Azure Storage Backend)
-Secure Infrastructure using NSG Rules
-Policy-as-Code Integration (OPA)
-Automated Cloud Resource Deployment
+1. Modular Terraform Architecture
+2. Remote State Configuration (Azure Storage Backend)
+3. Secure Infrastructure using NSG Rules
+4. Policy-as-Code Integration (OPA)
+5. Automated Cloud Resource Deployment
 
  Conclusion
 
