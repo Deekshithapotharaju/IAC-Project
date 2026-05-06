@@ -19,24 +19,38 @@ Storage and Database services support application data
 
  Modules Description
 1. Network Module
+
 Creates Resource Group
+
 Creates Virtual Network (VNet)
+
 Creates Subnet
+
 Creates Route Table and associates it with subnet
 2. Compute Module
 Creates Virtual Machine (Linux)
+
 Creates Network Interface (NIC)
+
 Creates Public IP
+
 Configures Network Security Group (NSG)
+
 Allows SSH (port 22) and HTTP (port 80)
+
 Installed ngnix to verify the public access of vm over internet
 3. Storage Module
 Creates Azure Storage Account
+
 Configured with Standard performance and LRS replication
+
 Enforces secure data transfer using HTTPS
+
 4. Database Module
 Creates Azure PostgreSQL Flexible Server
+
 Configures admin credentials and version
+
 Provides managed relational database service
 
 Technologies Used
