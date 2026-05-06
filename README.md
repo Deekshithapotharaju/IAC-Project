@@ -18,6 +18,7 @@ The VM is deployed inside a Virtual Network (VNet) and Subnet
 Storage and Database services support application data
 
  Modules Description
+
 1. Network Module
 
 Creates Resource Group
@@ -27,7 +28,9 @@ Creates Virtual Network (VNet)
 Creates Subnet
 
 Creates Route Table and associates it with subnet
+
 2. Compute Module
+
 Creates Virtual Machine (Linux)
 
 Creates Network Interface (NIC)
@@ -39,7 +42,9 @@ Configures Network Security Group (NSG)
 Allows SSH (port 22) and HTTP (port 80)
 
 Installed ngnix to verify the public access of vm over internet
+
 3. Storage Module
+
 Creates Azure Storage Account
 
 Configured with Standard performance and LRS replication
@@ -47,6 +52,7 @@ Configured with Standard performance and LRS replication
 Enforces secure data transfer using HTTPS
 
 4. Database Module
+
 Creates Azure PostgreSQL Flexible Server
 
 Configures admin credentials and version
@@ -60,6 +66,7 @@ Technologies Used
 4. Git & GitHub
 
  How to Run
+
 Step 1: Clone the repository
 
 git clone https://github.com/Deekshithapotharaju/IAC-Project
@@ -109,6 +116,7 @@ Virtual Machine Public IP, Database Server Name, Storage Account Name,NIC, VNet 
 
 
  Key Features
+ 
 1. Modular Terraform Architecture
 2. Remote State Configuration (Azure Storage Backend)
 3. Secure Infrastructure using NSG Rules
